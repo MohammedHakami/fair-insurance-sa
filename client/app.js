@@ -11,7 +11,7 @@
   // Replace this URL with the publicly deployed backend endpoint once
   // deployment is complete. During development, you can point to a local
   // server (e.g., http://localhost:3000).
-  const BACKEND_URL = "https://YOUR-BACKEND-URL";
+  const BACKEND_URL = "https://fair-insurance-sa-production.up.railway.app";
 
   // Translation dictionary for Arabic and English
   const i18n = {
