@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تأمين السيارات – السعر العادل</title>
+    <!-- Bootstrap 5 CSS from CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjJ"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .card-highlight {
+        border: 2px solid #198754;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-4">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 id="title" class="h3">حاسبة السعر العادل لتأمين السيارات</h1>
+        <div>
+          <select id="language-select" class="form-select form-select-sm" style="width: auto">
+            <option value="ar" selected>العربية</option>
+            <option value="en">English</option>
+          </select>
+        </div>
+      </div>
+      <!-- Form for collecting vehicle and driver data -->
+      <form id="quote-form" class="row gy-3">
+        <div class="col-md-4">
+          <label for="model" class="form-label" id="label-model">موديل السيارة</label>
+          <input type="text" class="form-control" id="model" required />
+        </div>
+        <div class="col-md-4">
+          <label for="year" class="form-label" id="label-year">سنة الصنع</label>
+          <input type="number" class="form-control" id="year" required />
+        </div>
+        <div class="col-md-4">
+          <label for="city" class="form-label" id="label-city">المدينة</label>
+          <select id="city" class="form-select" required>
+            <option value="">-- اختر المدينة --</option>
+            <option value="Riyadh">الرياض</option>
+            <option value="Jeddah">جدة</option>
+            <option value="Mecca">مكة</option>
+            <option value="Medina">المدينة المنورة</option>
+            <option value="Dammam">الدمام</option>
+            <option value="Other">مدينة أخرى</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="accidents" class="form-label" id="label-accidents">عدد الحوادث المسجلة</label>
+          <input type="number" class="form-control" id="accidents" min="0" value="0" />
+        </div>
+        <div class="col-md-4">
+          <label for="driver-age" class="form-label" id="label-driver-age">عمر السائق</label>
+          <input type="number" class="form-control" id="driver-age" min="16" required />
+        </div>
+        <div class="col-12 d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary" id="btn-calc">احسب السعر</button>
+        </div>
+      </form>
+
+      <!-- Results section -->
+      <div id="results" class="mt-5" style="display: none">
+        <h2 id="result-title" class="h4 mb-3">نتائج العروض</h2>
+        <div class="mb-2">
+          <label id="filter-label" for="filter-input" class="form-label me-2">بحث عن شركة:</label>
+          <input type="text" id="filter-input" class="form-control d-inline-block w-auto" style="min-width: 200px" />
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover" id="offers-table">
+            <thead>
+              <tr>
+                <th scope="col" data-sort="company">الشركة</th>
+                <th scope="col" data-sort="price">السعر (ريال)</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) and our custom script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-sJim19slMy0keqhvPx5jJUqg8RBwdlTmvfK0kqZRf20Hwrzxlpt5qFfGk5M14tVT"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
